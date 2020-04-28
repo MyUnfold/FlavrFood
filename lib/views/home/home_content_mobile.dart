@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mywebapp/widgets/NavigationBar/navigation_bar.dart';
 
 
 class HomeContentMobile extends StatefulWidget {
@@ -11,19 +10,63 @@ class HomeContentMobile extends StatefulWidget {
 }
 
 class HomeContentMobileState extends State<HomeContentMobile> {
-//  Widget mainPage = Center(child: Text(
-//    "Flavor Food",
-//    style: TextStyle(fontWeight: FontWeight.bold, fontStyle: FontStyle.italic),
-//    textScaleFactor: 5,
-//  ),
-//  );
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
         children: <Widget>[
-          /// Content For the Page - MOBILE -
+          Container(
+            height: 60,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Expanded(
+                  child: SizedBox(
+                    height: 50,
+                    width: 200,
+                    child: TextField(
+                      decoration: InputDecoration(
+                        labelText: 'search',
+                        icon: Icon(Icons.search),
+                      ),
+//                    onChanged: (),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 30,
+          ),
+          Expanded(
+            child: SizedBox(
+              child: Text("Today's Options",
+              style: TextStyle(
+                  fontWeight: FontWeight.w500,
+                  fontStyle: FontStyle.italic,
+                  fontSize: 35),
+              ),
+            ),
+          ),
+          Expanded(
+            child: DefaultTabController(
+              length: 2,
+              child: Container(
+                child: TabBar(
+                  labelColor: Colors.black,
+                  labelStyle: TextStyle(fontStyle: FontStyle.italic),
+                  indicatorSize: TabBarIndicatorSize.label,
+                  tabs: <Widget>[
+                    Tab(text: "All Cuisines"),
+                    Tab(text: "Special"),
+                  ],
+                ),
+              ),
+            ),
+          ),
+          /// Content For the Page - DESKTOP -
         ],
       ),
     );

@@ -12,23 +12,25 @@ class NavigationDrawerHeaderState extends State<NavigationDrawerHeader>{
   @override
   Widget build(BuildContext context) {
     // TODO: implement
-    return Container(
-      height: 100,
-      color: primaryColor,
-      alignment: Alignment.center,
-      child: Column(
+    return Expanded(
+      child: Container(
+        height: 12,
+        color: primaryColor,
+        alignment: Alignment.center,
+        child: Column(
 //        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Text(
-            'BROWSE',
-            style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.w800,
-              color: Colors.white,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              'BROWSE',
+              style: TextStyle(
+                fontSize: 10,
+                fontWeight: FontWeight.w800,
+                color: Colors.white,
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

@@ -28,106 +28,82 @@ class NavigationDrawerState extends State<NavigationDrawer> {
       decoration: BoxDecoration(
           color: Colors.white,
           boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 16)]),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      child: ListView(
+        //crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           NavigationDrawerHeader(),
-          Expanded(
-            child: Container(
-                width: 50.0,
-                height: 50.0,
-                decoration: new BoxDecoration(
-                    shape: BoxShape.circle,
-                    image: new DecorationImage(
-                        fit: BoxFit.fill,
-                        image: new AssetImage(
-                            "/Users/benajasandrain/FlavrFood/lib/assets/userLogo.png")
-                    )
-                )
+          SizedBox(
+            height: 10,
+          ),
+          Container(
+              width: 50.0,
+              height: 50.0,
+              decoration: new BoxDecoration(
+                  shape: BoxShape.circle,
+                  image: new DecorationImage(
+                      //fit: BoxFit.fill,
+                      image: new AssetImage(
+                          "/Users/benajasandrain/FlavrFood/assets/userPic.png")
+                  )
+              )
+          ),
+          Text("\nName\n",
+              textScaleFactor: 1.2),
+          RaisedButton(
+            shape: new RoundedRectangleBorder(
+                borderRadius: new BorderRadius.circular(25)
             ),
-          ),
-          Expanded(
-            child: Text("Name",
-                textScaleFactor: 1.2),
-          ),
-          Expanded(
-            child: RaisedButton(
-              color: Colors.green,
-              child: Text(
-                "Get Started",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.w700,
-                ),
-                textAlign: TextAlign.center,
+            color: Colors.green,
+            child: Text(
+              "Get Started",
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.w700,
               ),
+              textAlign: TextAlign.center,
+            ),
+            onPressed: (){
+              if (LogInAlert().alreadylogged){
+                return null;
+              }
+              else {
+                createAlertDialog(context);
+                //Navigator.pop(context);
+              }
+              /// WHAT
+            },
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Text(
+              "MENU"
+          ),
+          NavigationBarButton('Overview', Icon(Icons.track_changes), MaterialPageRoute(builder: (context) => HomeView())),
+          NavigationBarButton('Meals', Icon(Icons.fastfood), MaterialPageRoute(builder: (context) => HomeView())),
+          NavigationBarButton('Account', Icon(Icons.account_circle), MaterialPageRoute(builder: (context) => HomeView())),
+          NavigationBarButton('History', Icon(Icons.history), MaterialPageRoute(builder: (context) => HomeView())),
+          NavigationBarButton('Schedule', Icon(Icons.calendar_today), MaterialPageRoute(builder: (context) => HomeView())),
+          SizedBox(
+            height: 20,
+          ),
+          Text(
+              "COMMUNITY"
+          ),
+          NavigationBarButton('reviews', Icon(Icons.note), MaterialPageRoute(builder: (context) => HomeView())),
+
+          SizedBox(
+            height: 80,
+          ),
+          FlatButton.icon(
+              icon: Icon(
+                  Icons.exit_to_app
+              ),
+              label: Text (" Log out"),
               onPressed: (){
-                if (LogInAlert().alreadylogged){
-                  return null;
-                }
-                else {
-                  createAlertDialog(context);
-                  //Navigator.pop(context);
-                }
-                /// WHAT
-              },
-            ),
-          ),
-          Expanded(
-            child: SizedBox(
-              height: 20,
-            ),
-          ),
-          Expanded(
-            child: Text(
-                "MENU"
-            ),
-          ),
-          Expanded(
-            child: NavigationBarButton('Overview', Icon(Icons.track_changes), MaterialPageRoute(builder: (context) => HomeView())),
-          ),
-          Expanded(
-            child: NavigationBarButton('Meals', Icon(Icons.fastfood), MaterialPageRoute(builder: (context) => HomeView())),
-          ),
-          Expanded(
-            child: NavigationBarButton('Account', Icon(Icons.account_circle), MaterialPageRoute(builder: (context) => HomeView())),
-          ),
-          Expanded(
-            child: NavigationBarButton('History', Icon(Icons.history), MaterialPageRoute(builder: (context) => HomeView())),
-          ),
-          Expanded(
-            child: NavigationBarButton('Schedule', Icon(Icons.calendar_today), MaterialPageRoute(builder: (context) => HomeView())),
-          ),
-          Expanded(
-            child: SizedBox(
-              height: 20,
-            ),
-          ),
-          Expanded(
-            child: Text(
-                "COMMUNITY"
-            ),
-          ),
-          Expanded(
-            child: NavigationBarButton('reviews', Icon(Icons.note), MaterialPageRoute(builder: (context) => HomeView())),
-          ),
 
-          Expanded(
-            child: SizedBox(
-              height: 80,
-            ),
-          ),
-          Expanded(
-            child: FlatButton.icon(
-                icon: Icon(
-                    Icons.exit_to_app
-                ),
-                label: Text (" Log out"),
-                onPressed: (){
-
-                  /// what to do on pressed
-                }
-            ),
+                /// what to do on pressed
+              }
           ),
 
         ],

@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "flavrfod"
+    "default": "flavrfod",
+    "flavrFood": "flavrfood-6980f"
   }
 }

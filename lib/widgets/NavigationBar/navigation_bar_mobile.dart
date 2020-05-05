@@ -18,22 +18,23 @@ class NavigationBarMobileState extends State<NavigationBarMobile> {
     return Container(
       child:
       Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
-          Expanded(
-            child: SizedBox(
-              child: IconButton(icon: Icon(Icons.list),
-                color: Colors.black,
-                onPressed: (){
-                  Scaffold.of(context).openDrawer();
-                  /// what do to when pressed
-                },
-              ),
-            ),
+          SizedBox(
+            height: 10,
           ),
           SizedBox(
-            height: 500,
+            child: IconButton(icon: Icon(Icons.list),
+              color: Colors.black,
+              onPressed: (){
+                Scaffold.of(context).openDrawer();
+                /// what do to when pressed
+              },
+            ),
           ),
+//          SizedBox(
+//            height: 500,
+//          ),
         ],
       ),
     );

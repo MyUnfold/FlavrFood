@@ -14,24 +14,22 @@ class HomeContentMobileState extends State<HomeContentMobile> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
           Container(
             height: 60,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                Expanded(
-                  child: SizedBox(
-                    height: 50,
-                    width: 200,
-                    child: TextField(
-                      decoration: InputDecoration(
-                        labelText: 'search',
-                        icon: Icon(Icons.search),
-                      ),
-//                    onChanged: (),
+                SizedBox(
+                  height: 50,
+                  width: 200,
+                  child: TextField(
+                    decoration: InputDecoration(
+                      labelText: 'search',
+                      icon: Icon(Icons.search),
                     ),
+//                    onChanged: (),
                   ),
                 ),
               ],
@@ -40,17 +38,27 @@ class HomeContentMobileState extends State<HomeContentMobile> {
           SizedBox(
             height: 30,
           ),
-          Expanded(
-            child: SizedBox(
-              child: Text("Today's Options",
+          Container(
+            alignment: Alignment.center,
+            child: Text("Today's Options",
+            style: TextStyle(
+                fontWeight: FontWeight.w500,
+                fontStyle: FontStyle.italic,
+                fontSize: 35),
+            ),
+          ),
+          Container(
+            alignment: Alignment.center,
+            child: Text(
+              "\n    Select from the lsit below \n",
               style: TextStyle(
-                  fontWeight: FontWeight.w500,
-                  fontStyle: FontStyle.italic,
-                  fontSize: 35),
+                color: Colors.grey,
+                fontWeight: FontWeight.w400,
               ),
             ),
           ),
-          Expanded(
+          Container(
+            alignment: Alignment.topLeft,
             child: DefaultTabController(
               length: 2,
               child: Container(

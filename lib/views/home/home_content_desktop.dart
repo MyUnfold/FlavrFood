@@ -155,7 +155,16 @@ class HomeContentDesktopState extends State<HomeContentDesktop> {
                             ),
                           ],
                         ),
-
+                        Container(
+                          alignment: Alignment.topLeft,
+                          child: Text(
+                            "\n    Drag and drop meals to your list\n",
+                            style: TextStyle(
+                              color: Colors.grey,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ),
                         DefaultTabController(
                           length: 6,
                           child: Container(
@@ -185,16 +194,14 @@ class HomeContentDesktopState extends State<HomeContentDesktop> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: <Widget>[
-                        Expanded(
-                          child: Text("Create your\nmeal plan",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20),
-                          ),
+                        Text("Create your\nmeal plan",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20),
                         ),
                         Expanded(
                           child: Text(
-                            "for " + date,
+                            "\nfor " + date,
                             style: TextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.w500,

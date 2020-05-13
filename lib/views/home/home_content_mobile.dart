@@ -60,15 +60,14 @@ class HomeContentMobileState extends State<HomeContentMobile> {
           Container(
             alignment: Alignment.topLeft,
             child: DefaultTabController(
-              length: 2,
+              length: 1,
               child: Container(
                 child: TabBar(
                   labelColor: Colors.black,
                   labelStyle: TextStyle(fontStyle: FontStyle.italic),
                   indicatorSize: TabBarIndicatorSize.label,
                   tabs: <Widget>[
-                    Tab(text: "All Cuisines"),
-                    Tab(text: "Special"),
+                    Tab(text: "Main Plates"),
                   ],
                 ),
               ),

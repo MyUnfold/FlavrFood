@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mywebapp/widgets/ElementCard/ElementCardDesktop.dart';
 import 'package:mywebapp/widgets/NavigationBar/navigation_bar.dart';
 
 
@@ -166,23 +168,26 @@ class HomeContentDesktopState extends State<HomeContentDesktop> {
                           ),
                         ),
                         DefaultTabController(
-                          length: 6,
+                          length: 1,
                           child: Container(
+                            alignment: Alignment.topLeft,
                             child: TabBar(
                               labelColor: Colors.black,
                               labelStyle: TextStyle(fontStyle: FontStyle.italic),
                               indicatorSize: TabBarIndicatorSize.label,
                               tabs: <Widget>[
-                                Tab(text: "All Cuisines"),
-                                Tab(text: "Italian"),
-                                Tab(text: "Greek"),
-                                Tab(text: "Thai"),
-                                Tab(text: "Chinese"),
-                                Tab(text: "Cajun"),
+                                Tab(text: "Main Plates"),
                               ],
                             ),
                           ),
                         ),
+                        Divider(),
+//                      ListView.builder(
+//                        itemBuilder: (context, index) {
+//                          return ElementCardDesktop("card", "mes", "img", "cde", 0);
+//                        },
+//                        itemCount: 10,
+//                      ),
                       ],
                     ),
 

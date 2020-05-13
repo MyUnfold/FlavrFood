@@ -1,0 +1,10 @@
+[
+  {
+    "id" : 1,
+    "cardName" : "Enter the name",
+    "message" : "Enter the calories information",
+    "image": "link to the image",
+    "code" : "Code attached to the plate",
+    "price": 0
+  }
+]

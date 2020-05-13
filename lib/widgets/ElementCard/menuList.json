@@ -1,10 +1,8 @@
-[
-  {
-    "id" : 1,
-    "cardName" : "Enter the name",
-    "message" : "Enter the calories information",
-    "image": "/Users/benajasandrain/FlavrFood/assets/userPic.png",
-    "code" : "Code attached to the plate",
-    "price": "price"
-  }
-]
+{
+  "id" : 1,
+  "cardName" : "Enter the name",
+  "message" : "Enter the calories information",
+  "image": "/Users/benajasandrain/FlavrFood/assets/userPic.png",
+  "code" : "Code attached to the plate",
+  "price": "price"
+ }

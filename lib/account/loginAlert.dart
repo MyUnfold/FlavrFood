@@ -66,13 +66,13 @@ class AccountAlert extends StatelessWidget {
 //                ),
 
               OutsideLogin(
-                  "  Sign in with FaceBook", Colors.blue, Colors.white, null, "/Users/benajasandrain/FlavrFood/assets/facebookpath.png"),
+                  "  Sign in with FaceBook", Colors.blue, Colors.white, null, 'https://raw.githubusercontent.com/MyUnfold/FlavrFood/master/assets/facebookpath.png'),
               Expanded(child: SizedBox(height: 3,),),
               OutsideLogin(
-                  "  Sign in with Google", Colors.redAccent, Colors.black, null, "/Users/benajasandrain/FlavrFood/assets/googlepath.png"),
+                  "  Sign in with Google", Colors.redAccent, Colors.black, null, 'https://raw.githubusercontent.com/MyUnfold/FlavrFood/master/assets/googlepath.png'),
               Expanded(child: SizedBox(height: 3,),),
               OutsideLogin(
-                  "  Sign in with Apple", Colors.black, Colors.white, null, "/Users/benajasandrain/FlavrFood/assets/applepath.png"),
+                  "  Sign in with Apple", Colors.black, Colors.white, null, 'https://raw.githubusercontent.com/MyUnfold/FlavrFood/master/assets/applepath.png'),
               Expanded(child: SizedBox(height: 20,),),
               Expanded(
                 child: FlatButton(
@@ -216,7 +216,7 @@ class OutsideLogin extends StatelessWidget{
                 decoration: BoxDecoration(
                   image: new DecorationImage(
                   colorFilter: new ColorFilter.mode(Colors.black.withOpacity(0.6), BlendMode.dstATop),
-                  image: new AssetImage(imageLink),
+                  image: new NetworkImage(imageLink),
                   //fit: BoxFit.cover,
                   ),
                 ),

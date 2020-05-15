@@ -3,6 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:mywebapp/widgets/ElementCard/ElementCardDesktop.dart';
 import 'package:mywebapp/widgets/NavigationBar/navigation_bar.dart';
 
+import 'dart:convert';
+import 'package:flutter/widgets.dart';
+import 'dart:core';
+import 'package:mywebapp/widgets/ElementCard/cardInfo.dart';
+import 'package:http/http.dart' as http;
+
 
 class HomeContentDesktop extends StatefulWidget {
   HomeContentDesktop({Key key, this.title}) : super(key: key);
@@ -19,6 +25,34 @@ class HomeContentDesktopState extends State<HomeContentDesktop> {
   bool isMeat = false;
   bool isVegan = false;
   bool isGluFree = false;
+
+
+  List<CardInfo> _cards = List<CardInfo>();
+
+  Future<List<CardInfo>> fetchInfo() async {
+    var url = 'https://raw.githubusercontent.com/MyUnfold/FlavrFood/master/lib/widgets/ElementCard/menuList.json';
+    var response = await http.get(url);
+
+    var cards = List<CardInfo>();
+
+    if (response.statusCode == 200){
+      var cardsJson = json.decode(response.body);
+      for (var cardJson in cardsJson) {
+        cards.add(CardInfo.fromJson(cardJson));
+      }
+    }
+    return cards;
+  }
+
+  @override
+  void initState(){
+    fetchInfo().then((value){
+      setState(() {
+        _cards.addAll(value);
+      });
+    });
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -182,12 +216,18 @@ class HomeContentDesktopState extends State<HomeContentDesktop> {
                           ),
                         ),
                         Divider(),
-//                      ListView.builder(
-//                        itemBuilder: (context, index) {
-//                          return ElementCardDesktop("card", "mes", "img", "cde", 0);
-//                        },
-//                        itemCount: 10,
-//                      ),
+                      Expanded(
+                        child: Container(
+                          child: ListView.builder(
+                            itemBuilder: (context, index) {
+                            return ElementCardDesktop(_cards[index].cardName,
+                                _cards[index].message, _cards[index].image, _cards[index].code,
+                                _cards[index].price);
+                            },
+                            itemCount: _cards.length,
+                          ),
+                        ),
+                      ),
                       ],
                     ),
 

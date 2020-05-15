@@ -1,20 +1,24 @@
 class CardInfo{
-  final String cardName;
-  final String message;
-  final String image;
-  final String code;
-  final int price;
+   String cardName;
+   String message;
+   String image;
+   String code;
+   String price;
 
   CardInfo(this.cardName, this.message, this.image, this.code, this.price);
 
-  CardInfo.fromJson(Map<String, dynamic> json)
-  : cardName = json['name'],
-    message = json['message'],
-    image = json['image'],
-    code = json['code'],
-    price = json['price'];
+  CardInfo.fromJson(Map<String, dynamic> json) {
+      cardName = json['cardName'];
+      message = json['message'];
+      image = json['image'];
+      code = json['code'];
+      price = json['price'];
+    }
+}
 
-  Map<String, dynamic> toJson() =>
+
+/*
+ Map<String, dynamic> toJson() =>
       {
         'cardName' : cardName,
         'message' : message,
@@ -22,4 +26,4 @@ class CardInfo{
         'code' : code,
         'price' : price,
       };
-}
+ */

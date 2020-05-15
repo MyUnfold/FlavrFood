@@ -42,8 +42,8 @@ class NavigationDrawerState extends State<NavigationDrawer> {
                   shape: BoxShape.circle,
                   image: new DecorationImage(
                       //fit: BoxFit.fill,
-                      image: new AssetImage(
-                          "/Users/benajasandrain/FlavrFood/assets/userPic.png")
+                      image: new NetworkImage(
+                          'https://raw.githubusercontent.com/MyUnfold/FlavrFood/master/assets/userPic.png')
                   )
               )
           ),

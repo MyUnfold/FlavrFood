@@ -16,19 +16,18 @@ import 'package:http/http.dart' as http;
 
 class ElementCardDesktop extends StatelessWidget{
   String cardName, message, image, code;
-  int price;
-  //var user = User.fromJson(userMap);
+  String price;
 
-  Future FetchInfo() async {
+  bool _selected;
 
-  }
-
-  ElementCardDesktop(String card, String mes, String img, String cde, int p){
+  ElementCardDesktop(String card, String mes, String img, String cde, String p){
     cardName = card;
     message = mes;
     image = img;
     code = cde;
     price = p;
+
+    _selected = false;
   }
   @override
   Widget build(BuildContext context) {
@@ -37,44 +36,48 @@ class ElementCardDesktop extends StatelessWidget{
 //    var card = CardInfo.fromJson(cardMap);
     // TODO: implement build
     return SizedBox(
+      height: 100,
+      width: 100,
       child: Card(
         child: Padding(
-          padding: const EdgeInsets.only(top: 16.0, bottom: 16.0),
+          padding: const EdgeInsets.only(top: 16.0, bottom: 16.0, right: 16.0),
           child: Row(
             children: <Widget>[
-              IconButton(icon: Icon(Icons.drag_handle)),
+              IconButton(icon: Icon(
+                _selected ? Icons.star : Icons.star_border,
+                color: _selected ? Colors.red : null, ),
+                onPressed: () {
+                  setSelected();
+                },
+              ),
               Container(
-                  width: 50.0,
-                  height: 50.0,
+                  width: 80.0,
+                  height: 80.0,
                   decoration: new BoxDecoration(
                       shape: BoxShape.circle,
                       image: new DecorationImage(
                         //fit: BoxFit.fill,
-                          image: new AssetImage(image)  // "/Users/benajasandrain/FlavrFood/assets/userPic.png"
+                          image: new NetworkImage(image)  // "/Users/benajasandrain/FlavrFood/assets/userPic.png"
                       )
                   )
               ),
               Divider(),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start ,
-                children: <Widget>[
-                  ListTile(
+              Expanded(
+                child: SizedBox(
+                  child: ListTile(
                     title: Text(
-                      cardName,),
-                    trailing: Text(
-                      "\$" + price.toString()
-                    ),
+                      cardName + "\n\$ " + price,),
                     subtitle: Text(
                       message,
                     ),
                   ),
-                  Text(
-                    code,
-                    style: TextStyle(
-                      color: Colors.amber,
-                    ),
-                  )
-                ],
+                ),
+              ),
+              Text(
+                code,
+                style: TextStyle(
+                  color: Colors.amber,
+                ),
               )
             ],
           ),
@@ -82,4 +85,61 @@ class ElementCardDesktop extends StatelessWidget{
       ),
     );
   }
+
+  bool isSelected (){
+    return _selected;
+  }
+
+  void setSelected() {
+    _selected = !_selected;
+  }
 }
+
+
+/*
+
+
+Card(
+                              child: Padding(
+                                padding: const EdgeInsets.only(top: 16.0, bottom: 16.0),
+                                child: Row(
+                                  children: <Widget>[
+                                    IconButton(icon: Icon(Icons.drag_handle)),
+                                    Container(
+                                        width: 50.0,
+                                        height: 50.0,
+                                        decoration: new BoxDecoration(
+                                            shape: BoxShape.circle,
+                                            image: new DecorationImage(
+                                              //fit: BoxFit.fill,
+                                                image: new AssetImage("/Users/benajasandrain/FlavrFood/assets/userPic.png")  // "/Users/benajasandrain/FlavrFood/assets/userPic.png"
+                                            )
+                                        )
+                                    ),
+                                    Divider(),
+                                    Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start ,
+                                      children: <Widget>[
+                                        ListTile(
+                                          title: Text(
+                                            "cardName",),
+                                          trailing: Text(
+                                              "\$" + "price"
+                                          ),
+                                          subtitle: Text(
+                                            "message",
+                                          ),
+                                        ),
+                                        Text(
+                                          "code",
+                                          style: TextStyle(
+                                            color: Colors.amber,
+                                          ),
+                                        )
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              ),
+                            );
+ */

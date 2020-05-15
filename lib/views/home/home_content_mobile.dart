@@ -1,4 +1,11 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:mywebapp/widgets/ElementCard/ElementCardDesktop.dart';
+import 'package:mywebapp/widgets/ElementCard/ElementCardMobile.dart';
+import 'package:mywebapp/widgets/ElementCard/cardInfo.dart';
+import 'package:http/http.dart' as http;
+
 
 
 class HomeContentMobile extends StatefulWidget {
@@ -10,6 +17,36 @@ class HomeContentMobile extends StatefulWidget {
 }
 
 class HomeContentMobileState extends State<HomeContentMobile> {
+  final Set<ElementCardMobile> _saved = Set<ElementCardMobile>();
+
+  List<CardInfo> _cards = List<CardInfo>();
+
+  Future<List<CardInfo>> fetchInfo() async {
+    var url = 'https://raw.githubusercontent.com/MyUnfold/FlavrFood/master/lib/widgets/ElementCard/menuList.json';
+    var response = await http.get(url);
+
+    var cards = List<CardInfo>();
+
+    if (response.statusCode == 200){
+      var cardsJson = json.decode(response.body);
+      for (var cardJson in cardsJson) {
+        cards.add(CardInfo.fromJson(cardJson));
+      }
+    }
+    return cards;
+  }
+
+  @override
+  void initState(){
+    fetchInfo().then((value){
+      setState(() {
+        _cards.addAll(value);
+      });
+    });
+    super.initState();
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,19 +94,29 @@ class HomeContentMobileState extends State<HomeContentMobile> {
               ),
             ),
           ),
-          Container(
-            alignment: Alignment.topLeft,
-            child: DefaultTabController(
-              length: 1,
-              child: Container(
-                child: TabBar(
-                  labelColor: Colors.black,
-                  labelStyle: TextStyle(fontStyle: FontStyle.italic),
-                  indicatorSize: TabBarIndicatorSize.label,
-                  tabs: <Widget>[
-                    Tab(text: "Main Plates"),
-                  ],
-                ),
+          DefaultTabController(
+            length: 1,
+            child: Container(
+              child: TabBar(
+                labelColor: Colors.black,
+                labelStyle: TextStyle(fontStyle: FontStyle.italic),
+                indicatorSize: TabBarIndicatorSize.label,
+                tabs: <Widget>[
+                  Tab(text: "Main Plates"),
+                ],
+              ),
+            ),
+          ),
+          Divider(),
+          Expanded(
+            child: Container(
+              child: ListView.builder(
+                itemBuilder: (context, index) {
+                  return ElementCardMobile(_cards[index].cardName,
+                      _cards[index].message, _cards[index].image, _cards[index].code,
+                      _cards[index].price);
+                },
+                itemCount: _cards.length,
               ),
             ),
           ),

@@ -4,20 +4,20 @@
     "message" : "Enter the calories information",
     "image": "https://raw.githubusercontent.com/MyUnfold/FlavrFood/master/assets/friedRice.jpg",
     "code" : "CODE",
-    "price": "price"
+    "price": "0.00"
   },
   {
     "cardName" : "Enter the name",
     "message" : "Enter the calories information",
     "image": "https://raw.githubusercontent.com/MyUnfold/FlavrFood/master/assets/friedRice.jpg",
     "code" : "CODE",
-    "price": "price"
+    "price": "0.00"
   },
   {
     "cardName" : "Enter the name",
     "message" : "Enter the calories information",
     "image": "https://raw.githubusercontent.com/MyUnfold/FlavrFood/master/assets/friedRice.jpg",
     "code" : "CODE",
-    "price": "price"
+    "price": "0.00"
   }
 ]

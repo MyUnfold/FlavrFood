@@ -1,21 +1,23 @@
-{
-  "cardName" : "Enter the name",
-  "message" : "Enter the calories information",
-  "image": "https://raw.githubusercontent.com/MyUnfold/FlavrFood/master/assets/friedRice.jpg",
-  "code" : "CODE",
-  "price": "price"
-},
-{
-  "cardName" : "Enter the name",
-  "message" : "Enter the calories information",
-  "image": "/Users/benajasandrain/FlavrFood/assets/userPic.png",
-  "code" : "CODE",
-  "price": "price"
-},
-{
-  "cardName" : "Enter the name",
-  "message" : "Enter the calories information",
-  "image": "/Users/benajasandrain/FlavrFood/assets/userPic.png",
-  "code" : "CODE",
-  "price": "price"
-}
+[
+  {
+    "cardName" : "Enter the name",
+    "message" : "Enter the calories information",
+    "image": "https://raw.githubusercontent.com/MyUnfold/FlavrFood/master/assets/friedRice.jpg",
+    "code" : "CODE",
+    "price": "price"
+  },
+  {
+    "cardName" : "Enter the name",
+    "message" : "Enter the calories information",
+    "image": "/Users/benajasandrain/FlavrFood/assets/userPic.png",
+    "code" : "CODE",
+    "price": "price"
+  },
+  {
+    "cardName" : "Enter the name",
+    "message" : "Enter the calories information",
+    "image": "/Users/benajasandrain/FlavrFood/assets/userPic.png",
+    "code" : "CODE",
+    "price": "price"
+  }
+]

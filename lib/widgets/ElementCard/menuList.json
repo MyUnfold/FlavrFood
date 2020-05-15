@@ -1,8 +1,7 @@
 {
-  "id" : 1,
   "cardName" : "Enter the name",
   "message" : "Enter the calories information",
-  "image": "/Users/benajasandrain/FlavrFood/assets/userPic.png",
+  "image": 'https://raw.githubusercontent.com/MyUnfold/FlavrFood/master/assets/friedRice.jpg',
   "code" : "Code attached to the plate",
   "price": "price"
  }

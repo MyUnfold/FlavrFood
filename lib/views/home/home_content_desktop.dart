@@ -260,11 +260,16 @@ class HomeContentDesktopState extends State<HomeContentDesktop> {
                           child: Container(
                             child: ListView.builder(
                               itemBuilder: (context, index) {
-                                return SelectedCard(_cards[index].cardName,
-                                    _cards[index].message, _cards[index].image, _cards[index].code,
-                                    _cards[index].price);
+                                return
+                                  SelectedCard("Enter the name",
+                                      "Enter the calories information",
+                                      "https://raw.githubusercontent.com/MyUnfold/FlavrFood/master/assets/friedRice.jpg", "000",
+                                      "0.00");
+//                                  SelectedCard(_cards[index].cardName,
+//                                    _cards[index].message, _cards[index].image, _cards[index].code,
+//                                    _cards[index].price);
                               },
-                              itemCount: _cards.length,
+                              itemCount: 1, // _cards.length,
                             ),
                           ),
                         ),

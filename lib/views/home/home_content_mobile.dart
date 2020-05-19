@@ -167,17 +167,17 @@ class CheckOutDrawer extends StatefulWidget{
 class CheckOutDrawerState extends State<CheckOutDrawer> {
   var now = new DateTime.now();
 
-  List<ElementCardMobile> myList = List<ElementCardMobile>();
-
-  @override
-  void initState(){
-      setState(() {
-        for(ElementCardMobile card in _savedItems){
-          myList.add(card);
-        }
-      });
-    super.initState();
-  }
+//  List<ElementCardMobile> myList = List<ElementCardMobile>();
+//
+//  @override
+//  void initState(){
+//      setState(() {
+//        for(ElementCardMobile card in _savedItems){
+//          myList.add(card);
+//        }
+//      });
+//    super.initState();
+//  }
 
   @override
   Widget build(BuildContext context) {
@@ -213,11 +213,15 @@ class CheckOutDrawerState extends State<CheckOutDrawer> {
               child: ListView.builder(
                 itemBuilder: (context, index) {
                   return
-                    SelectedCard(myList[index].cardName,
-                        myList[index].message, myList[index].image, myList[index].code,
-                        myList[index].price);
+                    SelectedCard("Enter the name",
+                        "Enter the calories information",
+                        "https://raw.githubusercontent.com/MyUnfold/FlavrFood/master/assets/friedRice.jpg", "000",
+                        "0.00");
+//                    SelectedCard(myList[index].cardName,
+//                        myList[index].message, myList[index].image, myList[index].code,
+//                        myList[index].price);
                 },
-                itemCount: _savedItems.length,
+                itemCount: 1,
               ),
             ),
           ),

@@ -5,22 +5,31 @@ import 'dart:core';
 import 'package:mywebapp/widgets/ElementCard/cardInfo.dart';
 import 'package:http/http.dart' as http;
 
-//class ElementCardDesktop extends StatefulWidget{
-//  String cardName, message;
-//  int price;
-//  List<String> category;
-//
-//  @override
-//  ElementCardDesktopState createState() => ElementCardDesktopState();
-//}
-
-class ElementCardDesktop extends StatelessWidget{
+class ElementCardDesktop extends StatefulWidget{
   String cardName, message, image, code;
   String price;
 
+  ElementCardDesktop(String card, String mes, String img, String cde, String p){
+    cardName = card;
+    message = mes;
+    image = img;
+    code = cde;
+    price = p;
+  }
+
+  @override
+  ElementCardDesktopState createState() =>
+      ElementCardDesktopState(cardName, message, image, code, price);
+}
+
+class ElementCardDesktopState extends State<ElementCardDesktop>{
+  String cardName, message, image, code;
+  String price;
   bool _selected;
 
-  ElementCardDesktop(String card, String mes, String img, String cde, String p){
+  //Icon selectIcon = Icon(Icons.radio_button_unchecked);
+
+  ElementCardDesktopState(String card, String mes, String img, String cde, String p){
     cardName = card;
     message = mes;
     image = img;
@@ -31,9 +40,6 @@ class ElementCardDesktop extends StatelessWidget{
   }
   @override
   Widget build(BuildContext context) {
-//    var jsonString = json.
-//    Map cardMap = jsonDecode(jsonString);
-//    var card = CardInfo.fromJson(cardMap);
     // TODO: implement build
     return SizedBox(
       height: 100,
@@ -44,10 +50,12 @@ class ElementCardDesktop extends StatelessWidget{
           child: Row(
             children: <Widget>[
               IconButton(icon: Icon(
-                _selected ? Icons.star : Icons.star_border,
-                color: _selected ? Colors.red : null, ),
+                _selected ? Icons.radio_button_checked : Icons.radio_button_unchecked,
+                color: _selected ? Colors.green : null, ),
                 onPressed: () {
-                  setSelected();
+                  setState(() {
+                    setSelected();
+                  });
                 },
               ),
               Container(
@@ -66,9 +74,16 @@ class ElementCardDesktop extends StatelessWidget{
                 child: SizedBox(
                   child: ListTile(
                     title: Text(
-                      cardName + "\n\$ " + price,),
+                      cardName + "\n\$ " + price,
+                      style: TextStyle(
+                          fontSize: 18,
+                        fontWeight: FontWeight.w700,
+                      ),),
                     subtitle: Text(
                       message,
+                        style: TextStyle(
+                          fontSize: 12,
+                        )
                     ),
                   ),
                 ),

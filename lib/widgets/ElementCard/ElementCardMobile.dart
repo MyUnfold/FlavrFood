@@ -5,11 +5,11 @@ import 'dart:core';
 import 'package:mywebapp/widgets/ElementCard/cardInfo.dart';
 import 'package:http/http.dart' as http;
 
+bool _selected = false;
 
-class ElementCardMobile extends StatelessWidget{
+class ElementCardMobile extends StatefulWidget{
   String cardName, message, image, code;
   String price;
-  bool _selected;
 
   ElementCardMobile(String card, String mes, String img, String cde, String p){
     cardName = card;
@@ -17,8 +17,29 @@ class ElementCardMobile extends StatelessWidget{
     image = img;
     code = cde;
     price = p;
+  }
 
-    _selected = false;
+  bool isSelected (){
+    return _selected;
+  }
+
+  @override
+  ElementCardMobileState createState() =>
+      ElementCardMobileState(cardName, message, image, code, price);
+}
+
+
+class ElementCardMobileState extends State<ElementCardMobile>{
+  String cardName, message, image, code;
+  String price;
+
+
+  ElementCardMobileState(String card, String mes, String img, String cde, String p){
+    cardName = card;
+    message = mes;
+    image = img;
+    code = cde;
+    price = p;
   }
   @override
   Widget build(BuildContext context) {
@@ -35,10 +56,12 @@ class ElementCardMobile extends StatelessWidget{
           child: Row(
             children: <Widget>[
               IconButton(icon: Icon(
-              _selected ? Icons.star : Icons.star_border,
-              color: _selected ? Colors.red : null, ),
+              _selected ? Icons.radio_button_checked : Icons.radio_button_unchecked,
+              color: _selected ? Colors.green : null, ),
                 onPressed: () {
-                setSelected();
+                  setState(() {
+                    setSelected();
+                  });
                 },
               ),
               Container(
@@ -57,14 +80,17 @@ class ElementCardMobile extends StatelessWidget{
                 child: SizedBox(
                   child: ListTile(
                     title: Text(
-                      cardName + "\n\$ " + price,),
-//                    trailing: Text(
-//                        "\$ " + price
-//                    ),
+                      cardName + "\n\$ " + price,
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w700,
+                      ),),
                     subtitle: Text(
                       message,
+                        style: TextStyle(
+                          fontSize: 12,
+                        )
                     ),
-
                   ),
                 ),
               ),
@@ -80,11 +106,6 @@ class ElementCardMobile extends StatelessWidget{
       ),
     );
   }
-
-  bool isSelected (){
-    return _selected;
-  }
-
   void setSelected() {
     _selected = !_selected;
   }

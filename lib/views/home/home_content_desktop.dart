@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mywebapp/widgets/ElementCard/ElementCardDesktop.dart';
+import 'package:mywebapp/widgets/ElementCard/SelectedCard.dart';
 import 'package:mywebapp/widgets/NavigationBar/navigation_bar.dart';
 
 import 'dart:convert';
@@ -236,27 +237,40 @@ class HomeContentDesktopState extends State<HomeContentDesktop> {
                 Expanded(
                   flex: 1,
                   child: Container(
+                    padding: EdgeInsets.all(14.0),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
                         Text("Create your\nmeal plan",
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 20),
                         ),
+                        Text(
+                          "\nfor " + date,
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w500,
+                          ),
+                          textAlign: TextAlign.left,
+                        ),
+                        Divider(),
                         Expanded(
-                          child: Text(
-                            "\nfor " + date,
-                            style: TextStyle(
-                              fontSize: 12,
-                              fontWeight: FontWeight.w500,
+                          child: Container(
+                            child: ListView.builder(
+                              itemBuilder: (context, index) {
+                                return SelectedCard(_cards[index].cardName,
+                                    _cards[index].message, _cards[index].image, _cards[index].code,
+                                    _cards[index].price);
+                              },
+                              itemCount: _cards.length,
                             ),
-                            textAlign: TextAlign.left,
                           ),
                         ),
+                        Divider(),
                       ],
                     ),
-
                   ),
                 ),
               ],

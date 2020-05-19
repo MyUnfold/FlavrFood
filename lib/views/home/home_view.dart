@@ -25,6 +25,8 @@ class HomeViewState extends State<HomeView> {
         builder: (context, sizingInformation) => Scaffold(
           drawer: sizingInformation.deviceScreenType ==
               DeviceScreenType.mobile ? NavigationDrawer() : null,
+          endDrawer: sizingInformation.deviceScreenType ==
+              DeviceScreenType.mobile ? CheckOutDrawer() : null,
           body: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[

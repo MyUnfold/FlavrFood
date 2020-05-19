@@ -82,13 +82,13 @@ class ElementCardMobileState extends State<ElementCardMobile>{
                     title: Text(
                       cardName + "\n\$ " + price,
                       style: TextStyle(
-                        fontSize: 18,
+                        fontSize: 16,
                         fontWeight: FontWeight.w700,
                       ),),
                     subtitle: Text(
                       message,
                         style: TextStyle(
-                          fontSize: 12,
+                          fontSize: 10,
                         )
                     ),
                   ),

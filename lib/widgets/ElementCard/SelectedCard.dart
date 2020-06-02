@@ -66,7 +66,7 @@ class SelectedCardState extends State<SelectedCard>{
                 child: ListTile(
                   leading: leadingImage,
                   title: Text(
-                    cardName + "\n\$ " + price,
+                    cardName,   //cardName + "\n\$ " + price,
                   style: TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.w700,

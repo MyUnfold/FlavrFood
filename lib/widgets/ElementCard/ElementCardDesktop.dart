@@ -86,7 +86,7 @@ class ElementCardDesktopState extends State<ElementCardDesktop>{
                     child: ListTile(
                       title:
                       Text(
-                        cardName + "\n\$ " + price,
+                        cardName ,//    cardName + "\n\$ " + price,
                         style: TextStyle(
                             fontSize: 16,
                           fontWeight: FontWeight.w700,

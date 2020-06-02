@@ -85,15 +85,15 @@ class OverviewContentMobileState extends State<OverviewContentMobile> {
                 children: [
                   Expanded(
                     //flex: 1,
-                    child: Image.asset('/Users/benajasandrain/FlavrFood/lib/views/Overview/FoodSample/food2.jpg'),
+                    child: Image.network('https://raw.githubusercontent.com/MyUnfold/FlavrFood/master/lib/views/Overview/FoodSample/food2.jpg'),
                   ),
                   Expanded(
                     //flex: 2,
-                    child: Image.asset('/Users/benajasandrain/FlavrFood/assets/index.png'),
+                    child: Image.network('https://raw.githubusercontent.com/MyUnfold/FlavrFood/master/assets/index.png'),
                   ),
                   Expanded(
                     //flex: 1,
-                    child: Image.asset('/Users/benajasandrain/FlavrFood/lib/views/Overview/FoodSample/food4.jpg'),
+                    child: Image.network('https://raw.githubusercontent.com/MyUnfold/FlavrFood/master/lib/views/Overview/FoodSample/food4.jpg'),
                   ),
                 ],
               ),

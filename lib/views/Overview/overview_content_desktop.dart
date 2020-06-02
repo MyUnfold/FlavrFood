@@ -80,23 +80,23 @@ class OverviewContentDesktopState extends State<OverviewContentDesktop> {
                 children: [
                   Expanded(
                     //flex: 1,
-                    child: Image.asset('/Users/benajasandrain/FlavrFood/lib/views/Overview/FoodSample/food1.png'),
+                    child: Image.network('https://raw.githubusercontent.com/MyUnfold/FlavrFood/master/lib/views/Overview/FoodSample/food1.png'),
                   ),
                   Expanded(
                     //flex: 1,
-                    child: Image.asset('/Users/benajasandrain/FlavrFood/lib/views/Overview/FoodSample/food2.jpg'),
+                    child: Image.network('https://raw.githubusercontent.com/MyUnfold/FlavrFood/master/lib/views/Overview/FoodSample/food2.jpg'),
                   ),
                   Expanded(
                     //flex: 1,
-                    child: Image.asset('/Users/benajasandrain/FlavrFood/lib/views/Overview/FoodSample/food5.jpg'),
+                    child: Image.network('https://raw.githubusercontent.com/MyUnfold/FlavrFood/master/lib/views/Overview/FoodSample/food5.jpg'),
                   ),
                   Expanded(
                     //flex: 1,
-                    child: Image.asset('/Users/benajasandrain/FlavrFood/lib/views/Overview/FoodSample/food3.jpg'),
+                    child: Image.network('https://raw.githubusercontent.com/MyUnfold/FlavrFood/master/lib/views/Overview/FoodSample/food3.jpg'),
                   ),
                   Expanded(
                     //flex: 1,
-                    child: Image.asset('/Users/benajasandrain/FlavrFood/lib/views/Overview/FoodSample/food4.jpg'),
+                    child: Image.network('https://raw.githubusercontent.com/MyUnfold/FlavrFood/master/lib/views/Overview/FoodSample/food4.jpg'),
                   ),
                 ],
               ),

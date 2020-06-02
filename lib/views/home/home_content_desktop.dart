@@ -125,7 +125,7 @@ class HomeContentDesktopState extends State<HomeContentDesktop> {
                   child: Container(
                     padding: EdgeInsets.all(10),
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
+                      //mainAxisAlignment: MainAxisAlignment.start,
                       children: <Widget>[
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -231,7 +231,6 @@ class HomeContentDesktopState extends State<HomeContentDesktop> {
                       ),
                       ],
                     ),
-
                   ),
                 ),
                 Expanded(

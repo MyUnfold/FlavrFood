@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:mywebapp/account/login_signin.dart';
 import 'package:mywebapp/drawers/navigation_drawer_header.dart';
+import 'package:mywebapp/views/Overview/overview_content.dart';
 import 'package:mywebapp/widgets/NavigationBar/navigation_bar_buttons.dart';
 import 'package:mywebapp/views/home/home_view.dart';
 import 'package:mywebapp/account/loginAlert.dart';
@@ -79,7 +80,7 @@ class NavigationDrawerState extends State<NavigationDrawer> {
           Text(
               "MENU"
           ),
-          NavigationBarButton('Overview', Icon(Icons.track_changes), MaterialPageRoute(builder: (context) => HomeView())),
+          NavigationBarButton('Overview', Icon(Icons.track_changes), MaterialPageRoute(builder: (context) => OverviewContent())),
           NavigationBarButton('Meals', Icon(Icons.fastfood), MaterialPageRoute(builder: (context) => HomeView())),
           NavigationBarButton('Account', Icon(Icons.account_circle), MaterialPageRoute(builder: (context) => HomeView())),
           NavigationBarButton('History', Icon(Icons.history), MaterialPageRoute(builder: (context) => HomeView())),

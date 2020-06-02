@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mywebapp/views/Overview/overview_content.dart';
 import 'package:mywebapp/views/home/home_view.dart';
 import 'package:mywebapp/widgets/ElementCard/ElementCardMobile.dart';
 
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomeView(),
+      home: OverviewContent(),
     );
   }
 }

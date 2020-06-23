@@ -9,7 +9,7 @@
   {
     "cardName" : "Enter the name",
     "message" : "Enter the calories information",
-    "image": "hhttps://raw.githubusercontent.com/MyUnfold/FlavrFood/master/assets/bowl.jpg",
+    "image": "https://raw.githubusercontent.com/MyUnfold/FlavrFood/master/assets/bowl.jpg",
     "code" : "002",
     "price": "0.00"
   },

@@ -1,37 +1,98 @@
 [
   {
     "cardName" : "Enter the name",
+    "category" : "option 1",
     "message" : "Enter the calories information",
     "image": "https://raw.githubusercontent.com/MyUnfold/FlavrFood/master/assets/bowl.jpg",
-    "code" : "001",
+    "code" : "000",
     "price": "0.00"
   },
   {
     "cardName" : "Enter the name",
+    "category" : "option 1",
     "message" : "Enter the calories information",
     "image": "https://raw.githubusercontent.com/MyUnfold/FlavrFood/master/assets/bowl.jpg",
-    "code" : "002",
+    "code" : "000",
     "price": "0.00"
   },
   {
     "cardName" : "Enter the name",
+    "category" : "option 1",
     "message" : "Enter the calories information",
     "image": "https://raw.githubusercontent.com/MyUnfold/FlavrFood/master/assets/bowl.jpg",
-    "code" : "003",
+    "code" : "000",
     "price": "0.00"
   },
   {
     "cardName" : "Enter the name",
+    "category" : "option 2",
     "message" : "Enter the calories information",
-    "image": "https://raw.githubusercontent.com/MyUnfold/FlavrFood/master/assets/bowl.jpg",
-    "code" : "004",
+    "image": "https://raw.githubusercontent.com/MyUnfold/FlavrFood/master/assets/bowl1.jpg",
+    "code" : "000",
     "price": "0.00"
   },
   {
     "cardName" : "Enter the name",
+    "category" : "option 2",
     "message" : "Enter the calories information",
-    "image": "https://raw.githubusercontent.com/MyUnfold/FlavrFood/master/assets/bowl.jpg",
-    "code" : "005",
+    "image": "https://raw.githubusercontent.com/MyUnfold/FlavrFood/master/assets/bowl1.jpg",
+    "code" : "000",
+    "price": "0.00"
+  },
+  {
+    "cardName" : "Enter the name",
+    "category" : "option 2",
+    "message" : "Enter the calories information",
+    "image": "https://raw.githubusercontent.com/MyUnfold/FlavrFood/master/assets/bowl1.jpg",
+    "code" : "000",
+    "price": "0.00"
+  },
+  {
+    "cardName" : "Enter the name",
+    "category" : "option 3",
+    "message" : "Enter the calories information",
+    "image": "https://raw.githubusercontent.com/MyUnfold/FlavrFood/master/assets/bowl2.jpg",
+    "code" : "000",
+    "price": "0.00"
+  },
+  {
+    "cardName" : "Enter the name",
+    "category" : "option 3",
+    "message" : "Enter the calories information",
+    "image": "https://raw.githubusercontent.com/MyUnfold/FlavrFood/master/assets/bowl2.jpg",
+    "code" : "000",
+    "price": "0.00"
+  },
+  {
+    "cardName" : "Enter the name",
+    "category" : "option 3",
+    "message" : "Enter the calories information",
+    "image": "https://raw.githubusercontent.com/MyUnfold/FlavrFood/master/assets/bowl2.jpg",
+    "code" : "000",
+    "price": "0.00"
+  },
+  {
+    "cardName" : "Enter the name",
+    "category" : "option 4",
+    "message" : "Enter the calories information",
+    "image": "https://raw.githubusercontent.com/MyUnfold/FlavrFood/master/assets/bowl3.jpg",
+    "code" : "000",
+    "price": "0.00"
+  },
+  {
+    "cardName" : "Enter the name",
+    "category" : "option 4",
+    "message" : "Enter the calories information",
+    "image": "https://raw.githubusercontent.com/MyUnfold/FlavrFood/master/assets/bowl3.jpg",
+    "code" : "000",
+    "price": "0.00"
+  },
+  {
+    "cardName" : "Enter the name",
+    "category" : "option 4",
+    "message" : "Enter the calories information",
+    "image": "https://raw.githubusercontent.com/MyUnfold/FlavrFood/master/assets/bowl3.jpg",
+    "code" : "000",
     "price": "0.00"
   }
 ]
